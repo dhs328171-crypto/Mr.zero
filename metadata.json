@@ -1,0 +1,6 @@
+{
+  "name": "مستر زيرو | Mr. Zero NASA Lab",
+  "description": "مختبر بايثون التفاعلي ومحلل الذاكرة الذكي المعتمد بالكامل على واجهات برمجة تطبيقات ناسا الرسمية.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

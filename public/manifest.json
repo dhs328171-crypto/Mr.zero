@@ -1,0 +1,10 @@
+{
+  "name": "مستر زيرو | Mr. Zero NASA Lab",
+  "short_name": "مستر زيرو",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f5fb",
+  "theme_color": "#7047eb",
+  "lang": "ar",
+  "dir": "rtl"
+}

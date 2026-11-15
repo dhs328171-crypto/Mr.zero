@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mr. Zero — NASA Space Apps Challenge 2026 Pitch Deck (7 Slides)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Tajawal:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-deep: #060b19;
+        --bg-card: #0d162d;
+        --border: rgba(148, 163, 184, 0.2);
+        --cyan: #22d3ee;
+        --violet: #8b5cf6;
+        --emerald: #34d399;
+        --amber: #fbbf24;
+        --text-main: #f8fafc;
+        --text-muted: #94a3b8;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #030712;
+        color: var(--text-main);
+        font-family: "Inter", "Tajawal", system-ui, sans-serif;
+      }
+
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+
+      .ar {
+        font-family: "Tajawal", sans-serif;
+        direction: rtl;
+      }
+
+      .toolbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 24px;
+        background: rgba(6, 11, 25, 0.92);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn {
+        cursor: pointer;
+        border: 1px solid var(--border);
+        background: #0f172a;
+        color: #f8fafc;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(105deg, #7047eb, #0891b2);
+        border-color: transparent;
+      }
+
+      .deck {
+        max-width: 1180px;
+        margin: 28px auto;
+        padding: 0 20px 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+      }
+
+      .slide {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background: radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.16), transparent 45%),
+          radial-gradient(circle at 12% 85%, rgba(34, 211, 238, 0.14), transparent 45%),
+          var(--bg-deep);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 44px 52px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+      }
+
+      .slide-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--cyan);
+      }
+
+      .slide-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 12px;
+        color: var(--text-muted);
+        border-top: 1px solid rgba(148, 163, 184, 0.15);
+        padding-top: 14px;
+      }
+
+      h1 {
+        font-size: 46px;
+        line-height: 1.12;
+        margin: 0 0 16px;
+        font-weight: 900;
+        letter-spacing: -0.02em;
+      }
+
+      h2 {
+        font-size: 32px;
+        line-height: 1.2;
+        margin: 0 0 18px;
+        font-weight: 800;
+        letter-spacing: -0.015em;
+      }
+
+      p.lead {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #cbd5e1;
+        margin: 0;
+        max-width: 780px;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .grid-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px 20px;
+      }
+
+      .card h3 {
+        margin: 0 0 8px;
+        font-size: 16px;
+        color: #fff;
+      }
+
+      .card p,
+      .card li {
+        margin: 0;
+        font-size: 13.5px;
+        line-height: 1.55;
+        color: #cbd5e1;
+      }
+
+      .metric {
+        font-size: 30px;
+        font-weight: 900;
+        color: var(--cyan);
+        margin-bottom: 4px;
+      }
+
+      .list-clean {
+        margin: 0;
+        padding-left: 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 13px;
+      }
+
+      th,
+      td {
+        text-align: left;
+        padding: 9px 12px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+      }
+
+      th {
+        color: var(--cyan);
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      @page {
+        size: 1280px 720px;
+        margin: 0;
+      }
+
+      @media print {
+        body {
+          background: var(--bg-deep);
+        }
+        .toolbar {
+          display: none !important;
+        }
+        .deck {
+          max-width: none;
+          margin: 0;
+          padding: 0;
+          gap: 0;
+        }
+        .slide {
+          width: 1280px;
+          height: 720px;
+          border: none;
+          border-radius: 0;
+          page-break-after: always;
+          break-after: page;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toolbar">
+      <div style="display:flex;align-items:center;gap:12px">
+        <strong>Mr. Zero · NASA Space Apps Challenge 2026 (7 Slides)</strong>
+        <span class="ar" style="font-size:13px;color:#94a3b8">اضغط حفظ كـ PDF وارفعه على Google Drive أو GitHub</span>
+      </div>
+      <div class="toolbar-actions">
+        <a href="/" class="btn">Back to App</a>
+        <button type="button" class="btn btn-primary" onclick="window.print()">Export / Save as 7-Slide PDF</button>
+      </div>
+    </div>
+
+    <main class="deck">
+      <!-- SLIDE 1 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>NASA SPACE APPS CHALLENGE 2026</span>
+          <span>SLIDE 01 / 07</span>
+        </div>
+        <div>
+          <div class="mono" style="color:var(--amber);font-size:13px;margin-bottom:12px">
+            TEAM: MR. NOKRASHY-ZERO (<span class="ar">السيد نوكراشي-زيرو</span>)
+          </div>
+          <h1>
+            Mr. Zero<br />
+            <span style="color:var(--cyan)">Interactive Python Lab</span> for Live NASA Space Data
+          </h1>
+          <p class="lead">
+            A browser-native Arabic &amp; English Python 3.12 learning laboratory powered by WebAssembly (Pyodide) and 10+
+            official NASA APIs—turning live orbital vectors, Mars weather, near-Earth asteroids, and exoplanet catalogs
+            into visual, executable lessons.
+          </p>
+          <div class="grid-4" style="margin-top:28px">
+            <div class="card">
+              <div class="metric mono">10+</div>
+              <p>Official Live NASA APIs</p>
+            </div>
+            <div class="card">
+              <div class="metric mono">3.12</div>
+              <p>In-Browser Python (WASM)</p>
+            </div>
+            <div class="card">
+              <div class="metric mono">29</div>
+              <p>NASA Hologram Models</p>
+            </div>
+            <div class="card">
+              <div class="metric mono">7</div>
+              <p>Telemetry-Driven Lessons</p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer mono">
+          <span>Mr. Zero — Interactive Python Lab &amp; Smart Memory Visualizer</span>
+          <span>Zero API Keys Required for Students</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 2 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>THE CHALLENGE &amp; WHY IT MATTERS</span>
+          <span>SLIDE 02 / 07</span>
+        </div>
+        <div>
+          <h2>Why Beginners Struggle to Connect Code with Space Science</h2>
+          <div class="grid-2" style="margin-top:18px">
+            <div class="card" style="border-color:rgba(248,113,113,0.35)">
+              <h3 style="color:#fda4af">Current Barriers in STEM Education</h3>
+              <ul class="list-clean">
+                <li><strong>Invisible Execution:</strong> Standard editors only print pass/fail; beginners never see how variables or lists evolve in memory.</li>
+                <li><strong>Language &amp; Setup Friction:</strong> Arabic-speaking learners face cryptic English tracebacks and complex local Python environments.</li>
+                <li><strong>Static Toy Examples:</strong> Synthetic numbers fail to show how Python actually drives orbital navigation, Mars rovers, and planetary defense.</li>
+              </ul>
+            </div>
+            <div class="card" style="border-color:rgba(52,211,153,0.35)">
+              <h3 style="color:#6ee7b7">How Mr. Zero Solves It</h3>
+              <ul class="list-clean">
+                <li><strong>100% Real NASA Telemetry:</strong> Every lesson pulls live orbital velocities, Mars Curiosity REMS weather, NEO speeds, and Exoplanet Archive rows.</li>
+                <li><strong>Arabic Error Explainer &amp; Memory Board:</strong> Diagnoses exact tracebacks in Arabic and renders every variable type/value as live cards.</li>
+                <li><strong>Zero-Setup Browser Lab:</strong> Runs locally via same-origin Pyodide WebAssembly; works on any school Chromebook or laptop without installs.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer mono">
+          <span>Bridging Space Open Science &amp; Arabic STEM Accessibility</span>
+          <span>Built with Official NASA Open APIs</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 3 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>CORE PLATFORM CAPABILITIES</span>
+          <span>SLIDE 03 / 07</span>
+        </div>
+        <div>
+          <h2>A Complete Interactive Coding &amp; Visualization Environment</h2>
+          <div class="grid-3" style="margin-top:14px">
+            <div class="card">
+              <h3 style="color:var(--cyan)">1. In-Browser Python 3.12</h3>
+              <p>
+                Executes Python code safely in the browser via locally served Pyodide 0.26.4 WebAssembly with ZIP
+                header pre-verification and infinite-loop protection.
+              </p>
+            </div>
+            <div class="card">
+              <h3 style="color:var(--emerald)">2. Smart Memory Board</h3>
+              <p>
+                Inspects the live Python namespace after every execution, displaying each variable’s name, type
+                (int, float, list, dict), and current value.
+              </p>
+            </div>
+            <div class="card">
+              <h3 style="color:var(--amber)">3. Arabic Debugger &amp; PEP 8</h3>
+              <p>
+                Translates CPython exceptions with line numbers into clear Arabic guidance and scores code style
+                (0–100) using a deterministic rule-based PEP 8 reviewer.
+              </p>
+            </div>
+            <div class="card">
+              <h3 style="color:var(--violet)">4. Programmable 3D Hologram</h3>
+              <p>
+                Students invoke Python commands like <code>draw_orbit()</code>, <code>draw_earth()</code>, and
+                <code>draw_shape()</code> to plot real orbital geometry directly onto an interactive SVG stage.
+              </p>
+            </div>
+            <div class="card">
+              <h3 style="color:#67e8f9">5. Zero Pro Study Suite</h3>
+              <p>
+                Includes a 25-minute focus timer, code snapshots, execution history, daily NASA challenges, live
+                NASA data quizzes, JSON export/import, and printable certificates.
+              </p>
+            </div>
+            <div class="card">
+              <h3 style="color:#fda4af">6. Click-to-Inspect Any Target</h3>
+              <p>
+                Clicking any of 29 celestial/mission models, near-Earth asteroids, or exoplanets loads its complete
+                official NASA dossier, photo gallery, and runnable Python script.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer mono">
+          <span>Interactive Code · Visual Memory · Programmable Hologram</span>
+          <span>Zero Client-Side Secrets</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 4 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>OFFICIAL NASA DATA ARCHITECTURE</span>
+          <span>SLIDE 04 / 07</span>
+        </div>
+        <div>
+          <h2>100% Live Data Sourced Exclusively from Official NASA APIs</h2>
+          <table style="margin-top:10px">
+            <thead>
+              <tr>
+                <th>NASA API / System</th>
+                <th>Live Telemetry &amp; Assets Extracted</th>
+                <th>Where Used in Mr. Zero</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">NASA/JPL Horizons API</td>
+                <td>Live ISS (NAIF -125544) &amp; planetary heliocentric vectors, physical specs</td>
+                <td>Lessons 1 &amp; 6, Solar System Hologram, Model Dossiers</td>
+              </tr>
+              <tr>
+                <td class="mono">JPL SBDB CAD &amp; Lookup + NeoWs</td>
+                <td>Close-approach asteroid distances (AU/LD), speeds, diameters, orbital elements</td>
+                <td>Lessons 3 &amp; 5, Clickable Asteroid Radar &amp; Dossiers</td>
+              </tr>
+              <tr>
+                <td class="mono">Mars Curiosity REMS &amp; Perseverance</td>
+                <td>Gale Crater 7-sol temperature/pressure/UV + Jezero Crater raw rover images</td>
+                <td>Lesson 2, Mars Weather Panel, Mars &amp; Rover Dossiers</td>
+              </tr>
+              <tr>
+                <td class="mono">NASA Exoplanet Archive TAP</td>
+                <td>Confirmed planets, host star Teff, radii, orbital periods, equilibrium temps</td>
+                <td>Lesson 4 &amp; 7, Clickable Exoplanet Catalog &amp; Dossiers</td>
+              </tr>
+              <tr>
+                <td class="mono">DSCOVR EPIC, EONET v3, POWER, APOD &amp; Images</td>
+                <td>Full Earth imagery, natural events, surface temp/solar irradiance, deep-space gallery</td>
+                <td>Live Telemetry Deck, Interactive APOD Viewer, 29-Model Galleries</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="slide-footer mono">
+          <span>Backend Express Aggregator (/api/nasa/bundle &amp; /api/nasa/profile) with TTL Caching</span>
+          <span>Zero Mock Data</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 5 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>COMPLETE ENTITY DOSSIER WORKFLOW</span>
+          <span>SLIDE 05 / 07</span>
+        </div>
+        <div>
+          <h2>Select Any Mission, Asteroid, or Exoplanet → Full Data &amp; Code</h2>
+          <div class="grid-2" style="margin-top:16px">
+            <div class="card">
+              <h3>Unified Deep Inspection Endpoint (<span class="mono" style="color:var(--cyan)">/api/nasa/profile</span>)</h3>
+              <ul class="list-clean" style="margin-top:10px">
+                <li><strong>29 NASA Models:</strong> Earth, Moon, Mars, Sun, Planets, ISS, JWST, Hubble, Voyager 1, Perseverance, Curiosity, Artemis SLS, Orion, DSCOVR, Parker Solar Probe, Chandra, OSIRIS-REx, and deep-space targets.</li>
+                <li><strong>Instant Photo Archive:</strong> Fetches up to 8 high-resolution official photos from <code>images-api.nasa.gov</code> with NASA ID, center, capture date, and description.</li>
+                <li><strong>Domain Telemetry Tables:</strong> Displays 8 osculating orbital elements for asteroids, 7-sol REMS weather + Perseverance photos for Mars, and 24h trajectory points for ISS.</li>
+              </ul>
+            </div>
+            <div class="card" style="background:#040d1d">
+              <h3 style="color:var(--emerald)">One-Click Python &amp; Hologram Simulation</h3>
+              <pre class="mono" style="font-size:12px;line-height:1.55;color:#6ee7b7;white-space:pre-wrap;margin:10px 0 0">
+asteroid_name = "(2026 VK13)"  # NASA/JPL SBDB
+dist_au = 0.01842
+velocity_kms = 11.40
+dist_million_km = round(dist_au * 149.5978707, 2)
+
+draw_earth(200, 150, 50, "Earth")
+draw_orbit(200, 150, 115, "#f59e0b")
+draw_shape("asteroid", 315, 150, 26, "#cbd5e1")
+draw_text(12, 286, f"{asteroid_name}: {dist_million_km}M km", "#fde68a")
+print("Distance (million km):", dist_million_km)</pre>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer mono">
+          <span>Every Row &amp; Model Generates Valid Python Orbital Visualizations</span>
+          <span>Live Data → Immediate Execution</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 6 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>CURRICULUM DESIGN &amp; IMPACT</span>
+          <span>SLIDE 06 / 07</span>
+        </div>
+        <div>
+          <h2>7 Progressive Lessons Grounded in Live NASA Missions</h2>
+          <table style="margin-top:10px">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Python Concept</th>
+                <th>Live NASA Dataset &amp; Mission Context</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="mono">01</td>
+                <td>Variables &amp; Arithmetic</td>
+                <td>Calculating 60-second orbital travel from live <strong>ISS velocity (JPL Horizons -125544)</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">02</td>
+                <td>Conditionals (if / else)</td>
+                <td>Classifying thermal thresholds from <strong>Mars Curiosity REMS Gale Crater Sols</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">03</td>
+                <td>For Loops &amp; Filtering</td>
+                <td>Counting high-velocity NEOs (&gt;10 km/s) from <strong>NASA NeoWs &amp; JPL SBDB CAD</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">04</td>
+                <td>Lists &amp; append()</td>
+                <td>Cataloging newly confirmed worlds from <strong>NASA Exoplanet Archive TAP</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">05</td>
+                <td>Custom Functions (def)</td>
+                <td>Converting asteroid approach distances from <strong>AU to Lunar Distances (LD)</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">06</td>
+                <td>Time-Series Averaging</td>
+                <td>Computing mean orbital altitude across 24h <strong>JPL Horizons ISS samples</strong></td>
+              </tr>
+              <tr>
+                <td class="mono">07</td>
+                <td>Scientific Data Cleaning</td>
+                <td>Filtering missing <code>None</code> sensor values in <strong>Mars REMS &amp; Exoplanet series</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="slide-footer mono">
+          <span>XP Progression · 5 Live NASA Quizzes · Printable Completion Certificate</span>
+          <span>Learn Python by Analyzing Real Space Data</span>
+        </div>
+      </section>
+
+      <!-- SLIDE 7 -->
+      <section class="slide">
+        <div class="slide-header mono">
+          <span>ARCHITECTURE, LIMITATIONS &amp; ROADMAP</span>
+          <span>SLIDE 07 / 07</span>
+        </div>
+        <div>
+          <h2>Engineering Stack &amp; Path Forward</h2>
+          <div class="grid-3" style="margin-top:16px">
+            <div class="card">
+              <h3 style="color:var(--cyan)">Production Tech Stack</h3>
+              <ul class="list-clean">
+                <li><strong>Frontend:</strong> React 19, TypeScript, Vite 8, Tailwind CSS v4, Lucide Icons.</li>
+                <li><strong>Python Runtime:</strong> Pyodide 0.26.4 (CPython 3.12 WebAssembly) served locally from Express.</li>
+                <li><strong>Backend:</strong> Node.js 22 + Express server-side NASA API proxy &amp; cache.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="color:var(--amber)">Known Limitations</h3>
+              <ul class="list-clean">
+                <li>Python runs on the main browser thread; while infinite loops (<code>while True</code> without <code>break</code>) are blocked before execution, heavy loops can briefly pause UI updates.</li>
+                <li>Rate-limited <code>api.nasa.gov</code> endpoints are safely cached and paired with keyless JPL/GSFC/Caltech endpoints.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="color:var(--emerald)">Next Planned Milestones</h3>
+              <ul class="list-clean">
+                <li>Move Pyodide execution into a dedicated <strong>Web Worker</strong> with interruptible execution.</li>
+                <li>Add interactive <code>matplotlib</code> / NumPy spectral plotting modules for JWST &amp; exoplanet light curves.</li>
+                <li>Classroom assignment export for Arabic STEM educators.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="lead" style="margin-top:22px;font-size:16px;color:var(--cyan)">
+            Thank you for reviewing Mr. Zero — Empowering the next generation of space data scientists.
+          </p>
+        </div>
+        <div class="slide-footer mono">
+          <span>Team: السيد نوكراشي-زيرو (Mr. Nokrashy-Zero)</span>
+          <span>NASA Space Apps Challenge 2026 · Public Demo Ready</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
